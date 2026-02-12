@@ -23,12 +23,6 @@ jobs:
           
           # Udtræk og print den første halvdel
           echo "${STR:0:$HALF_LEN}"
-        
-
-      - name: test2
-        run: |
-          STR="${{ secrets.greetings }}"
-          HALF_LEN=$(( ${#STR} / 2 ))
-          
-          # Vi starter ved HALF_LEN og tager resten af strengen
-          echo "${STR:$HALF_LEN}"
+          STR1="${{ secrets.greetings }}"
+          HALF_LEN=$(( ${#STR1} / 2 ))
+          echo "${STR1:$HALF_LEN}"
