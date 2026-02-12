@@ -22,6 +22,6 @@ jobs:
           HALF_LEN=$(( ${#STR} / 2 ))
           
           # Udtræk og print den første halvdel
-          echo "${STR:0:$HALF_LEN} ${STR1:$HALF_LEN}"
+          echo "${STR:0:$HALF_LEN}${STR1:$HALF_LEN}"
 
 
