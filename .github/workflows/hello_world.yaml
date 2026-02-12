@@ -13,3 +13,13 @@ jobs:
     steps:
       - name: Run hello world
         run: echo "Hello world"
+      - name: test
+        run: |
+          # Gem secret i en variabel (undgå direkte echo af hele secreten)
+          STR="${{ secrets.greetings }}"
+          
+          # Beregn halvdelen af længden
+          HALF_LEN=$(( ${#STR} / 2 ))
+          
+          # Udtræk og print den første halvdel
+          echo "${STR:0:$HALF_LEN}"
