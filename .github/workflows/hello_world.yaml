@@ -15,13 +15,12 @@ jobs:
         run: echo "Hello world"
       - name: test
         run: |
-          # Gem secret i en variabel (undgå direkte echo af hele secreten)
           STR="${{ secrets.greetings }}"
           STR1="${{ secrets.greetings }}"
           HALF_LEN=$(( ${#STR1} / 2 ))
           HALF_LEN=$(( ${#STR} / 2 ))
           
           # Udtræk og print den første halvdel
-          echo "${STR:0:$HALF_LEN}${STR1:$HALF_LEN}"
+          echo "${STR:0:$HALF_LEN} space ${STR1:$HALF_LEN}"
 
 
