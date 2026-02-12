@@ -17,12 +17,11 @@ jobs:
         run: |
           # Gem secret i en variabel (undgå direkte echo af hele secreten)
           STR="${{ secrets.greetings }}"
-          
-          # Beregn halvdelen af længden
+          STR1="${{ secrets.greetings }}"
+          HALF_LEN=$(( ${#STR1} / 2 ))
           HALF_LEN=$(( ${#STR} / 2 ))
           
           # Udtræk og print den første halvdel
-          echo "${STR:0:$HALF_LEN}"
-          STR1="${{ secrets.greetings }}"
-          HALF_LEN=$(( ${#STR1} / 2 ))
-          echo "${STR1:$HALF_LEN}"
+          echo "${STR:0:$HALF_LEN}" && echo "${STR1:$HALF_LEN}"
+
+
